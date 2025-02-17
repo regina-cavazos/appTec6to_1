@@ -1,6 +1,8 @@
 import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
+import Link from "next/link";
+import Image from "next/image";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -25,8 +27,26 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
+      
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
+        
+          <div className="flex space-x-4 items-center pt-8">
+            <Image
+              className="rounded-full pl-3"
+              src="/loguitoconCaro.png"
+              alt="Next.js logo"
+              width={180}
+              height={38}
+              priority
+            />
+            
+            <Link href = "/" className="text-blue-500 hover:underline"> Home</Link>
+            <Link href = "/page1" className="text-pink-500 hover:underline"> Pag1</Link>
+            <Link href = "/page2" className="text-green-500 hover:underline"> Pag2</Link>
+              
+          </div>
+        
         {children}
       </body>
     </html>
