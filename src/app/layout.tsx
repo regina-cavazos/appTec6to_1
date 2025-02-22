@@ -26,14 +26,11 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body
-      
-        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
-      >
-        
-          <div className="flex space-x-4 items-center pt-8">
+      <body className={`${geistSans.variable} ${geistMono.variable} antialiased`}>
+        <header className="bg-pink-100 py-4"> {/* Light pink background */}
+          <div className="flex space-x-4 items-center pt-2 px-4">
             <Image
-              className="rounded-full pl-3"
+              className="rounded-full"
               src="/loguitoconCaro.png"
               alt="Next.js logo"
               width={180}
@@ -41,11 +38,11 @@ export default function RootLayout({
               priority
             />
             
-            <Link href = "/" className="text-blue-500 hover:underline"> Home</Link>
-            <Link href = "/page1" className="text-pink-500 hover:underline"> Pag1</Link>
-            <Link href = "/page2" className="text-green-500 hover:underline"> Pag2</Link>
-              
+            <Link href="/" className="text-blue-500 hover:underline">Home</Link>
+            <Link href="/page1" className="text-pink-500 hover:underline">Pag1</Link>
+            <Link href="/page2" className="text-green-500 hover:underline">Pag2</Link>
           </div>
+        </header>
         
         {children}
       </body>
